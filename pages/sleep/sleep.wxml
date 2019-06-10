@@ -1,0 +1,74 @@
+<wxs src='filter.wxs' module='filter' />
+<view style="width:100%;overflow:hidden;z-index:1;position:relative;background-color:#FF4E66;background-image:url(https://duoyidian.hzinterconn.cn/reading_mini_sleep_bg.png);background-size:cover;color:#fff;box-sizing:border-box;margin-bottom:20rpx;padding-left:.5rem;padding-top:3rem;padding-bottom:4rem;">
+    <view bindtap="toList" style="position:absolute;right:0;top:.5rem;width:6rem;">
+        <view style="float:right;color:#fff;border:1px solid #fff;border-right:0;width:4rem;display:flex;justify-content: center;align-items: Center;height:1.6rem;border-top-left-radius:1rem;border-bottom-left-radius:1rem;">我的战绩</view>
+    </view>
+    <view style="position:absolute;right:.5rem;bottom:1.5rem;width:3.5rem;">
+        <view style="position:relative;">         
+          <button open-type="share" plain="true" style="padding:0;border:none;position:absolute;width:100%;height:100%;">
+          </button>
+            <view style="position:absolute;top:0;width:100%;left:0;text-align:center;top:.6rem;;">
+                邀请好友
+            </view>
+        <image src="https://duoyidian.hzinterconn.cn/icon_sleep_invite_friends.png" style="height:3.5rem;width:3.5rem;"/>    
+        </view>
+    </view>
+    <view style="display:flex;height:100%;width:100%;box-sizing:border-box;position:relative;display:flex;justify-content: center;align-items: Center;">
+        <view>
+            <view style="text-align:center;margin-bottom:.5rem;">明日早起准时打卡瓜分金币（元）</view>
+            <view style="display:flex;justify-content: center;align-items: Center;font-size:3rem;">
+                {{coin}}
+            </view>
+            <view style="overflow:hidden;width:13rem;margin:1rem auto;">
+                <block wx:for="{{users}}" wx:key="{{index}}">
+                    <view wx:if="{{index<0||index==0}}" style="height:1.5rem;width:1.5rem;border-radius:50%;background-color:#ccc;border:1px solid #fff;float:left;overflow:hidden;"><image src="{{item}}" style="height:1.5rem;width:1.5rem;border-radius:50%;"/></view>
+                    <view wx:elif="{{index<7&&index>0}}" style="height:1.5rem;width:1.5rem;border-radius:50%;background-color:#ccc;border:1px solid #fff;margin-left:-.2rem;float:left;">
+                        <image src="{{item}}" style="height:1.5rem;width:1.5rem;border-radius:50%;"/>
+                    </view>
+                </block>
+                <view style="float:right;height:1.5rem;display:flex;justify-content: center;align-items: Center;">{{usersNum}}人参与</view>
+            </view>
+            <view style="text-align:center;" bindtap="toRules">
+                挑战规则 >
+            </view>
+        </view>
+    </view>
+</view>
+<view style="width:100%;overflow:hidden;box-sizing:border-box;padding:0 3rem;margin-top:-1.8rem;z-index:2;position:relative;">
+    <view bindtap="checkSleep" style="background-color:#FF4E66;color:#fff;text-align:center;padding:.8rem 0;border-radius:.3rem;">
+        {{signIn?'明早06:00准时打卡哦！':'我要挑战'}}
+    </view>  
+</view>
+<view style="width:100%;overflow:hidden;margin-top:1rem;">
+    <view style="text-align:center;font-size:1rem;">今日打卡战况</view> 
+    <view style="display:flex;justify-content: center;align-items: Center;height:2rem;font-size:.8rem;">
+        <view style="margin-right:1rem;color:#aaa;"> <text style="color:#FF4E66">{{todaySucc}}</text> 成功</view>
+        <view style="color:#aaa;"><text style="color:#FE9D3A">{{todayFail}}</text> 失败</view>
+    </view> 
+    <view style="display:flex;width:90%;margin:0 auto;text-align:center;">
+        <view style="flex:1">
+            <view style="border-radius:100%;height:4rem;width:4rem;background-color:#eee;margin:0 auto;overflow:hidden;">
+                <image src="{{shouqi.headUrl?shouqi.headUrl:'https://duoyidian.hzinterconn.cn/icon_user_head.png'}}" style="overflow:hidden;width:4rem;height:4rem;"/>
+            </view>
+            <view style="color:#fff;background-color:#ff7285;width:4rem;margin:0 auto;border-radius:.5rem;margin-top:-.5rem;padding:.1rem 0;position:relative;">手气之星</view>
+            <view>{{shouqi.uname?shouqi.uname:'用户名'}}</view>
+            <view>{{shouqi.data?shouqi.data:'暂无信息'}}</view>
+        </view>
+        <view style="flex:1">
+            <view style="border-radius:100%;height:4rem;width:4rem;background-color:#eee;margin:0 auto;overflow:hidden;">
+                <image src="{{zuizao.headUrl?zuizao.headUrl:'https://duoyidian.hzinterconn.cn/icon_user_head.png'}}" style="overflow:hidden;width:4rem;height:4rem;"/>
+            </view>
+            <view style="color:#fff;background-color:#ffa850;width:4rem;margin:0 auto;border-radius:.5rem;margin-top:-.5rem;padding:.1rem 0;position:relative;">早起之星</view>
+            <view>{{zuizao.uname?zuizao.uname:'用户名'}}</view>
+            <view>{{zuizao.data?zuizao.data:'暂无信息'}}</view>
+        </view>
+        <view style="flex:1">
+            <view style="border-radius:100%;height:4rem;width:4rem;background-color:#eee;margin:0 auto;overflow:hidden;">
+                <image src="{{zuiduo.headUrl?zuiduo.headUrl:'https://duoyidian.hzinterconn.cn/icon_user_head.png'}}" style="overflow:hidden;width:4rem;height:4rem;"/>
+            </view>
+            <view style="color:#fff;background-color:#60b6ff;width:4rem;margin:0 auto;border-radius:.5rem;margin-top:-.5rem;padding:.1rem 0;position:relative;">毅力之星</view>
+            <view>{{zuiduo.uname?zuiduo.uname:'用户名'}}</view>
+            <view>{{zuiduo.data?zuiduo.data:'暂无信息'}}</view>
+        </view>
+    </view>
+</view>

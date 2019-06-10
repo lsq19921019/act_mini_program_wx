@@ -1,0 +1,70 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/detail/detail",
+    "pages/welfare/welfare",
+    "pages/welfare/rules/rules",
+    "pages/start/start",
+    "pages/sleep/sleep",
+    "pages/sleep/sleeplist/sleeplist",
+    "pages/sleep/paysleep/paysleep",
+    "pages/sleep/sleeprules/sleeprules",
+    "pages/my/my",
+    "pages/my/coin_record/coin_record",
+    "pages/my/private_rules/private_rules",
+    "pages/my/rules/rules",
+    "pages/my/aboutus/aboutus"
+    
+  ],
+  "subPackages": [
+    {
+      "root": "package",
+      "pages": [
+      ]
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#FF4E66",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#ED2D3C",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "img/icon_footer_1.png",
+        "selectedIconPath": "img/icon_footer_1.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/welfare/welfare",
+        "iconPath": "img/icon_footer_2.png",
+        "selectedIconPath": "img/icon_footer_2.png",
+        "text": "福利"
+      },
+      {
+        "pagePath": "pages/sleep/sleep",
+        "iconPath": "img/icon_footer_3.png",
+        "selectedIconPath": "img/icon_footer_3.png",
+        "text": "早起"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "img/icon_footer_4.png",
+        "selectedIconPath": "img/icon_footer_4.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx32540bd863b27570",
+    "wx13e41a437b8a1d2e",
+    "wxca3957e5474b3670"
+  ],
+  "sitemapLocation": "sitemap.json"
+}

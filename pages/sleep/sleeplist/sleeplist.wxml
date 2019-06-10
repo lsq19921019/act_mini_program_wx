@@ -1,0 +1,62 @@
+<wxs src='filter.wxs' module='filter' />
+<view style="background-color:#FF4E66;color:#fff;">
+    <view style="height:1rem;width:100%;"></view>
+    <view style="display:flex;height:2rem;">
+        <view style="flex:1;display:flex;justify-content: center;align-items: Center;">{{info_data.allBet+''?info_data.allBet:''}}</view>
+        <view style="flex:1;display:flex;justify-content: center;align-items: Center;">{{info_data.allWin+''?info_data.allWin:''}}</view>
+        <view style="flex:1;display:flex;justify-content: center;align-items: Center;">{{info_data.allDays+''?info_data.allDays:''}}</view>
+        <view style="flex:1;display:flex;justify-content: center;align-items: Center;">{{info_data.succDays+''?info_data.succDays:''}}</view>
+    </view>
+    <view style="display:flex;height:2rem;background-color:#ff6076;">
+        <view style="flex:1;display:flex;justify-content: center;align-items: Center;">投入金币</view>
+        <view style="flex:1;display:flex;justify-content: center;align-items: Center;">收入金币</view>
+        <view style="flex:1;display:flex;justify-content: center;align-items: Center;">参与天数</view>
+        <view style="flex:1;display:flex;justify-content: center;align-items: Center;">成功天数</view>
+    </view>
+</view>
+<view style="background-color:#fff;margin-top:.2rem;">
+    <view style="padding:.5rem .5rem;width:100%;box-sizing:border-box;border-bottom:1px solid #eee;">
+    每日明细
+    </view>
+    <block wx:if="{{data_list.length>0}}" >
+        <block wx:for="{{data_list}}" wx:key="{{index}}">
+            <view style="display:flex;padding:.5rem .5rem;border-bottom:1px solid #eee;">
+                <view style="flex:1;overflow:hidden;">
+                    <view style="float:left;">
+                        <view>{{item.clockName}}</view>
+                        <view style="color:#A3A3A3;">
+                            报名时间：
+                            <view>{{item.createTime?filter.getDates_(item.createTime):'暂无信息'}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view style="flex:1;overflow:hidden;">
+                    <view style="float:right;">
+                        <view>投入{{item.betGoldCoin}} 早起打卡</view>
+                        <view style="color:#A3A3A3;">
+                            打卡时间：
+                            <view>{{item.clockTime?filter.getDates_(item.clockTime):'暂无信息'}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </block>
+    <block wx:else>
+        <view style="padding:.5rem 0;text-align:center;">暂无数据</view> 
+    </block>
+    <!-- <view style="display:flex;padding:.5rem .5rem;border-bottom:1px solid #eee;">
+        <view style="flex:1;overflow:hidden;">
+            <view style="float:left;">
+                <view>01-18</view>
+                <view style="color:#A3A3A3;">报名时间：2019-02-16 16:20</view>
+            </view>
+        </view>
+        <view style="flex:1;overflow:hidden;">
+            <view style="float:right;">
+                <view>投入1.00 早起打卡</view>
+                <view style="color:#A3A3A3;">打卡时间：01-18 21:32:22</view>
+            </view>
+        </view>
+    </view> -->
+</view>

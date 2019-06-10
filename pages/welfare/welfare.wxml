@@ -1,0 +1,57 @@
+<wxs src='filter.wxs' module='filter' />
+<view wx:if="{{showBoxPho}}" style="z-index:10;background-color:rgba(0,0,0,.5);width:100%;height:100%;position:fixed;top:0;left:0;display:flex;justify-content: center;align-items: Center;">
+    <view style="margin:0 auto;width:80%;">
+        <view style="background-color:#fff;height:10rem;width:100%;border-radius:.3rem;box-sizing:border-box;padding:1rem 1rem;">
+            <view style="text-align:center;padding:.5rem 0;font-size:1rem;font-weight:bold;">充值手机号</view>
+            <input maxlength="11" placeholder-style="border:0;margin:0 0;padding:0 0;" bindinput="bindBlur" bindconfirm="getGoods" value="{{mobile}}" style="box-sizing:border-box;padding-left:1.5rem;border-radius:.7rem;width:100%;background-color:#F8F8F8;height:1.6rem;" placeholder="请输入手机号"></input>
+        <view bindtap="getGoods" style="text-align:center;width:80%;margin:0 auto;color:#fff;background-color:#FF4E66;font-size:.8rem;padding:.5rem 0;border-radius:.3rem;margin-top:1rem;">确定</view>
+        
+        </view>
+        
+        <view bindtap="closeWin" style="width:2rem;height:2rem;margin:0 auto;margin-top:2rem;">
+            <image src="https://duoyidian.hzinterconn.cn/icon_reading_close_btn.png" style="width:2rem;height:2rem;"/>
+        </view>
+         </view>
+</view>
+<view style="position:relative;overflow:hidden;">
+    <view class="bannerAD" askInfoin>
+            <swiper autoplay="true" interval="4000" circular="true" class="swiper" indicator-color="rgba(255,255,255,0.8)" indicator-active-color="red" indicator-dots="true">
+                <block wx:for="{{themlist}}" wx:key="{{index}}">
+                    <swiper-item>
+                        <!-- <navigator class="u-row" url="{{item.url}}"> -->
+                        <view bindtap="toPageBanner" data-type="{{index}}">
+                            <image src="{{item.imageUrl}}" mode="widthFix" />
+                        </view>
+                        <!-- </navigator> -->
+                    </swiper-item>
+                </block>
+            </swiper>
+        </view>
+    <view bindtap="toRules" style="font-size:.7rem;position:absolute;right:0;top:1rem;background-color:#555;color:#fff;width:4rem;padding:.5rem 0;text-align:center;border-top-left-radius:1rem;border-bottom-left-radius:1rem;">
+        规则说明
+    </view>
+</view>
+<view>
+    <block wx:for="{{data_list}}" wx:key="{{index}}">
+        <view style="display:flex;box-sizing:border-box;padding:.5rem .5rem;background-color:#fff;margin-bottom:.5rem;">
+            <view style="flex:1;">
+                <view style="border-radius:.5rem;overflow:hidden;">
+                    <image src="{{item.goodsheadUrl}}" style="width:7rem;height:7rem;float:left;"/>
+                </view>
+            </view>
+            <view style="flex:2;margin-left:.5rem">
+                <view style="font-size:.8rem;font-weight:bold;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;">{{item.goodsName}}</view>
+                <view style="overflow:hidden;margin-top:1.5rem;">
+                    <view style="float:left;">
+                        <view style="text-decoration:line-through;color:#aaa;">原价￥{{item.price?item.price:0}}</view>
+                        <view style="font-size:2rem;color:red;">￥0<text style="font-size:.5rem;">已有{{item.salesNum?item.salesNum:0}}人免费获得</text></view>
+                    </view>
+                    <view style="float:right;">
+                        <view style="height:1.8rem;"></view>
+                        <view bindtap="showBox" data-id="{{item.id}}" style="width:3rem;height:1.5rem;display:flex;justify-content: center;align-items: Center;background-color:red;color:#fff;border-radius:.2rem;">免费拿</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+</view>

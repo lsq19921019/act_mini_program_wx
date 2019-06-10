@@ -1,0 +1,23 @@
+<wxs src='filter.wxs' module='filter' />
+<!-- <view style="position:absolute;width:100%;top:0;left:0;background-color:#FF4E66;color:#fff;display:flex;justify-content: center;align-items: Center;text-align:center;height:6rem;">
+    <view>
+        <view style="font-size:1rem;font-weight:bold;margin-bottom:.5rem;">隐私条款及服务声明</view>
+        <view>助你养成早起好习惯还能赢金币</view>
+    </view>
+</view> -->
+<view style="height:100%;background-color:#fff;padding:1rem 1rem;font-size:.6rem;box-sizing:border-box;font-size:.8rem;">
+    <view style="text-align:center;font-weight:bold;">
+福利商城玩法介绍</view>
+ <text style="white-space:pre-wrap">
+1、金币有什么用?
+1）金币可以用来兑换福利商城的商品，将商品免费拿走。
+2）金币还可以参与早起挑战，赚更多的金币，免费拿更多的商品。
+
+2、金币怎么获得?
+1）每天阅读文章可以获得金币
+2）转发文章给好友，转发文章到群，也可以获得金币
+3）参与早起挑战打卡成功，也可以获得金币
+
+*本活动最终解释权归活动方
+</text>
+</view>

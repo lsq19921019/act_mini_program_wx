@@ -1,0 +1,57 @@
+<wxs src='filter.wxs' module='filter' />
+<view style="background-color:#fff;height:100%;">
+    <view style="background-color:#fff;padding-bottom:1rem;">
+        <view style="padding:1rem 0;font-size:.8rem;">
+            <view style="text-align:center;margin-bottom:.5rem;">参与明天6:00-8:00 </view> 
+            <view style="text-align:center;">早起瓜分金币挑战 </view> 
+        </view>
+        <view style="display:flex;justify-content: center;align-items: Center;font-size:.8rem;">
+            <view>
+                <view style="display:flex;margin-bottom:.5rem;text-align:center;">
+                    <view bindtap="switchSel" data-type="1" data-coin="1" class="{{coin_type==='1'?'red_box':''}}" style="flex:1;height:4rem;width:6rem;border:1px solid #ccc;margin-right:.5rem;border-radius:.3rem;display:flex;justify-content: center;align-items: Center;">
+                        <view>
+                        <view style="line-height:1.5rem;height:1.5rem;"><text style="font-size:1.5rem">1</text> 金币</view>
+                        <view>牛刀小试</view>
+                        </view>
+                    </view>
+                    <view bindtap="switchSel" data-type="2" data-coin="2" class="{{coin_type==='2'?'red_box':''}}" style="flex:1;height:4rem;width:6rem;border:1px solid #ccc;border-radius:.3rem;display:flex;justify-content: center;align-items: Center;">
+                        <view>
+                        <view style="line-height:1.5rem;height:1.5rem;"><text style="font-size:1.5rem">2</text> 金币</view>
+                        <view>牛刀小试</view>
+                        </view>
+                    </view>
+                </view>
+                <view style="display:flex;margin-bottom:.5rem;text-align:center;">
+                    <view bindtap="switchSel" data-type="3" data-coin="5" class="{{coin_type==='3'?'red_box':''}}" style="flex:1;height:4rem;width:6rem;border:1px solid #ccc;margin-right:.5rem;border-radius:.3rem;display:flex;justify-content: center;align-items: Center;">
+                        <view>
+                        <view style="line-height:1.5rem;height:1.5rem;"><text style="font-size:1.5rem">5</text> 金币</view>
+                        <view>牛刀小试</view>
+                        </view>
+                    </view>
+                    <view bindtap="switchSel" data-type="4" data-coin="10" class="{{coin_type==='4'?'red_box':''}}" style="flex:1;height:4rem;width:6rem;border:1px solid #ccc;border-radius:.3rem;display:flex;justify-content: center;align-items: Center;">
+                        <view>
+                        <view style="line-height:1.5rem;height:1.5rem;"><text style="font-size:1.5rem">10</text> 金币</view>
+                        <view>牛刀小试</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view style="color:#FF4E66;text-align:center;">
+            提示：1金币等于1元，购买份数越多，打卡成功后赚的越多。
+        </view>
+    </view>
+    <view style="text-align:center;padding:.5rem 0;background-color:#F6F5F5;">
+        选择支付方式
+    </view>
+    <view style="background-color:#fff;padding:.8rem 0;">
+        <view data-pay="{{sel_pay}}" bindtap="selPay" style="display:flex;justify-content: center;align-items: Center;margin-bottom:1.8rem;">
+            <view style="margin-right:.5rem;border-radius:.2rem;background-color:red;color:#fff;height:1rem;width:1rem;display:flex;justify-content: center;align-items: Center;">余</view> 
+            <view>我的金币余额  （{{remain?remain:'0'}}）</view>
+            <view class="{{sel_pay==1?'active_sel':''}}" style="margin-left:.5rem;background-color:#ccc;height:1rem;width:1rem;display:flex;justify-content: center;align-items: Center;border-radius:100%;">
+                <view style="border-top:2px solid #fff;border-right:2px solid #fff;height:.4rem;width:.6rem;transform:rotate(135deg);margin-bottom:.2rem;"></view>
+            </view>
+        </view>
+        <view bindtap="paySleep" style="color:#fff;background-color:red;text-align:center;width:60%;margin:0 auto;padding:.5rem 0;border-radius:.2rem;">支付</view>
+    </view>
+</view>

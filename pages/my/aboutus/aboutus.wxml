@@ -1,0 +1,13 @@
+<wxs src='filter.wxs' module='filter' />
+<!-- <view style="position:absolute;width:100%;top:0;left:0;background-color:#FF4E66;color:#fff;display:flex;justify-content: center;align-items: Center;text-align:center;height:6rem;">
+    <view>
+        <view style="font-size:1rem;font-weight:bold;margin-bottom:.5rem;">隐私条款及服务声明</view>
+        <view>助你养成早起好习惯还能赢金币</view>
+    </view>
+</view> -->
+<view style="height:100%;background-color:#fff;padding:1rem 1rem;font-size:.6rem;box-sizing:border-box;font-size:.8rem;">
+    <view style="text-align:center;font-weight:bold;">
+小程序介绍</view>
+ <text style="white-space:pre-wrap">欢迎来到辣妈知识致富。这里是宝妈宝爸生活经验分享，还可以看文章学知识，转发文章还赚钱。天天派福利，惊喜送不停！不要错过！更多精彩，敬请期待！
+</text>
+</view>

@@ -1,0 +1,64 @@
+var toFixed = function(v){
+  return v.toFixed(2)
+}
+  var getDates = function(obj){
+      var time = '';
+      if(obj.status){
+        time = obj.handleTime;
+      }else{
+        time = obj.createTime;
+      }
+    
+      var date =getDate(time);
+      var M = date.getMonth() + 1;
+      var y = date.getFullYear();
+      var d = date.getDate();
+      var hours = date.getHours();
+      var min = date.getMinutes();
+      var sec = date.getSeconds();
+      return y+'-'+M+'-'+d+' '+hours+':'+min+':'+sec;
+  }
+  var getDates_ = function(obj){
+    var time = '';
+    if(obj.status){
+      time = obj.handleTime;
+    }else{
+      time = obj.createTime;
+    }
+    time = obj;
+    var date =getDate(time);
+    var M = date.getMonth() + 1;
+    var y = date.getFullYear();
+    var d = date.getDate();
+    var hours = date.getHours();
+    var min = date.getMinutes();
+    var sec = date.getSeconds();
+    return (y<10?'0'+y:y)+'-'+(M<10?'0'+M:M)+'-'+(d<10?'0'+d:d)+' '+(hours<10?'0'+hours:hours)+':'+(min<10?'0'+min:min)+':'+(sec<10?'0'+sec:sec);
+}
+  var getStatus = function(status){
+      var t = status;
+      var r = '';
+    switch (t) {
+        case 0:
+        // return '提现申请';
+        r = '提现申请';
+        break;
+        case 1:
+        // return '提现成功';
+        r = '提现成功';
+        break;
+        case 2:
+        // return '提现失败';
+        r = '提现失败';
+        break;
+        default:
+            break;
+    }
+    return r;
+  }
+  module.exports = {
+    formatDate: getDates,
+    getStatus: getStatus,
+    toFixed:toFixed,
+    getDates_:getDates_
+  };

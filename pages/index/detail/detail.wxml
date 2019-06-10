@@ -1,0 +1,2 @@
+<!-- <wxs src='filter.wxs' module='filter' /> -->
+<web-view src="{{url}}" type="66666666"></web-view>

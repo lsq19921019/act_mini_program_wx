@@ -1,0 +1,14 @@
+<wxs src='filter.wxs' module='filter' />
+<view style="position:absolute;width:100%;top:0;left:0;background-color:#FF4E66;color:#fff;display:flex;justify-content: center;align-items: Center;text-align:center;height:6rem;">
+    <view>
+        <view style="font-size:1rem;font-weight:bold;margin-bottom:.5rem;">早起打卡挑战规则</view>
+        <view>助你养成早起好习惯还能赢金币</view>
+    </view>
+</view>
+<view style="background-color:#fff;padding:1rem 1rem;height:100%;font-size:.6rem;box-sizing:border-box;padding-top:8rem;">
+    <view style="margin-bottom:.5rem;font-size:.8rem;font-weight:bold;">游戏规则</view>
+    <view style="margin-bottom:.5rem;">1.每天 8:00 ~ 24:00 报名参加次日的早起打卡挑战，挑战金币放入早起成功奖励池。</view>
+    <view style="margin-bottom:.5rem;">2.次日 6:00 ~ 24:00 为早起打卡时间，再此时间内进入早起挑战页面打卡即视为挑战成功获得随机瓜分奖励池金币的资格。奖励</view>
+    <view style="margin-bottom:.5rem;">3.报名后未在打卡时间内成功打卡的，视为挑战失败，挑战金不退回。</view>
+    <view style="margin-bottom:.5rem;">4.0:00 ~ 6:00 为睡眠时间，不可以报名或打卡。</view>
+</view>

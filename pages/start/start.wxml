@@ -1,0 +1,15 @@
+<!--pages/start/start.wxml-->
+
+<!-- <view class='bg' style="height:{{winHeight-428}}rpx"> -->
+<view class='logo_wrap'>
+  <view class='logo'>
+    <image src='https://duoyidian.hzinterconn.cn/icon_auth_login.png'></image>
+  </view>
+  <text>hi~欢迎来到辣妈知识致富</text>
+</view>
+<!-- </view> -->
+
+
+<button class='login' open-type="getUserInfo" bindgetuserinfo="accreditLogin">
+  微信登录
+</button>

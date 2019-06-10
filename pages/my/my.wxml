@@ -1,0 +1,98 @@
+<wxs src='filter.wxs' module='filter' />
+
+<view wx:if="{{showWinLayer}}" style="z-index:10;background-color:rgba(0,0,0,.5);width:100%;height:100%;position:fixed;top:0;left:0;display:flex;justify-content: center;align-items: Center;">
+    <view style="margin:0 auto;width:80%;">
+        <view style="background-color:#fff;height:20rem;width:100%;border-radius:.3rem;box-sizing:border-box;padding:1rem 1rem;">
+            
+            <view style="text-align:center;font-size:1rem;">联系我们</view>
+            <view style="text-align:center;">
+                <image src="https://duoyidian.hzinterconn.cn/contact_us_reading_mini.jpg" style="width:12rem;height:12rem;"/>
+            </view>
+            <view bindtap="closeWin" style="text-align:center;width:80%;margin:0 auto;color:#fff;background-color:#FF4E66;font-size:.8rem;padding:.5rem 0;border-radius:.3rem;margin-top:.5rem;">确定</view>
+        </view>
+        <view bindtap="closeWin" style="width:2rem;height:2rem;margin:0 auto;margin-top:2rem;">
+            <image src="https://duoyidian.hzinterconn.cn/icon_reading_close_btn.png" style="width:2rem;height:2rem;"/>
+        </view>
+    </view>
+</view>
+<view style="background-color:#FF4E66;color:#fff;box-sizing:border-box;margin-bottom:20rpx;padding-left:1rem;padding-top:1rem;padding-bottom:4rem;">
+    <view style="display:flex;width:100%;box-sizing:border-box;">
+        <view style="flex:1">
+            <image src="{{head_img}}" style="height:.1rem;width:100%;border-radius:100%;" mode="widthFix" />
+        </view> 
+        <view style="flex:2;">
+            <view style="font-size:.8rem;float:left;height:100%;display:flex;justify-content: center;align-items: Center;margin-left:1rem;">
+                <!-- <view style="display:flex;justify-content: center;align-items: Center;">
+                     -->
+                    <view>
+                        <view>神秘用户</view>
+                        <view style="margin-top:1rem;">{{nick_name}}</view>
+                    </view>
+                <!-- </view> -->
+            </view>
+        </view>
+        <view style="flex:2;overflow:hidden;">
+            <!-- <view bindtap="getUsrInfo" style="float:right;color:#FF4E66;background-color:#fff;width:7rem;display:flex;justify-content: center;align-items: Center;height:1.6rem;border-top-left-radius:1rem;border-bottom-left-radius:1rem;">获取微信昵称头像 ></view> -->
+        </view>
+    </view>
+</view>
+    <view style="width:100%;box-sizing:border-box;padding:0 .5rem;margin-top:-3rem;">
+        <view style="display:flex;width:100%;box-sizing:border-box;background-color:#fff;height:5rem;border-radius:.3rem;">
+            <view style="flex:1;display:flex;justify-content: center;align-items: Center;">
+                <view>
+                    <view style="font-size:2rem;color:#FF4E66;height:2rem;width:2rem;display:flex;justify-content: center;align-items: Center;">{{coin}}</view>
+                    <view style="text-align:center;margin-top:.5rem;">金币</view>
+                </view>
+            </view>
+            <view bindtap="toCoinRecord" style="flex:1;display:flex;justify-content: center;align-items: Center;">
+                <view>
+                    <view style="display:flex;justify-content: center;align-items: Center;">
+                        <image src="../../img/icon_my_list.png"  style="height:2rem;width:2rem;" mode="widthFix"/>
+                    </view>
+                    <view style="text-align:center;margin-top:.5rem;">金币明细</view>
+                </view>
+            </view>
+        </view>
+        <view style="width:100%;box-sizing:border-box;padding:0 .8rem;background-color:#fff;margin-top:.5rem;border-radius:.3rem;">
+            <view bindtap="toHomePage" style="display:flex;padding:.8rem 0;border-bottom:1px solid #eaeaea;">
+                <view style="flex:1;overflow:hidden;">
+                    <view style="height:1rem;font-size:.8rem;float:left;display:flex;justify-content: center;align-items: Center;">获取金币</view> 
+                </view>
+                <view style="flex:1;overflow:hidden;">
+                    <view style="transform:rotate(45deg);float:right;margin-right:.3rem;border-right:2px solid #ccc;border-top:2px solid #ccc;width:1rem;height:1rem;"></view> 
+                </view>
+            </view>
+            <view bindtap="showWin" style="display:flex;padding:.8rem 0;border-bottom:1px solid #eaeaea;">
+                <view style="flex:1;overflow:hidden;">
+                    <view style="height:1rem;font-size:.8rem;float:left;display:flex;justify-content: center;align-items: Center;">联系客服</view> 
+                </view>
+                <view style="flex:1;overflow:hidden;">
+                    <view style="transform:rotate(45deg);float:right;margin-right:.3rem;border-right:2px solid #ccc;border-top:2px solid #ccc;width:1rem;height:1rem;"></view> 
+                </view>
+            </view>
+            <!-- <view style="display:flex;padding:.8rem 0;border-bottom:1px solid #eaeaea;">
+                <view style="flex:1;overflow:hidden;">
+                    <view style="height:1rem;font-size:.8rem;float:left;display:flex;justify-content: center;align-items: Center;">意见反馈</view> 
+                </view>
+                <view style="flex:1;overflow:hidden;">
+                    <view style="transform:rotate(45deg);float:right;margin-right:.3rem;border-right:2px solid #ccc;border-top:2px solid #ccc;width:1rem;height:1rem;"></view> 
+                </view>
+            </view> -->
+            <view bindtap="toUs" style="display:flex;padding:.8rem 0;border-bottom:1px solid #eaeaea;">
+                <view style="flex:1;overflow:hidden;">
+                    <view style="height:1rem;font-size:.8rem;float:left;display:flex;justify-content: center;align-items: Center;">关于我们</view> 
+                </view>
+                <view style="flex:1;overflow:hidden;">
+                    <view style="transform:rotate(45deg);float:right;margin-right:.3rem;border-right:2px solid #ccc;border-top:2px solid #ccc;width:1rem;height:1rem;"></view> 
+                </view>
+            </view>
+            <view bindtap="toRules" style="display:flex;padding:.8rem 0;">
+                <view style="flex:1;overflow:hidden;">
+                    <view style="height:1rem;font-size:.8rem;float:left;display:flex;justify-content: center;align-items: Center;">隐私条款及服务声明</view> 
+                </view>
+                <view style="flex:1;overflow:hidden;">
+                    <view style="transform:rotate(45deg);float:right;margin-right:.3rem;border-right:2px solid #ccc;border-top:2px solid #ccc;width:1rem;height:1rem;"></view> 
+                </view>
+            </view>
+        </view>
+    </view>

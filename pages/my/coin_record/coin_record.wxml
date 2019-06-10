@@ -1,0 +1,44 @@
+<wxs src='filter.wxs' module='filter' />
+<view>
+    <view>
+
+    </view>
+</view>
+<view style="z-index:0;position:relative;background-color:#FF4E66;background-image:url(https://duoyidian.hzinterconn.cn/reading_mini_my_bg.png);background-size:contain;color:#fff;box-sizing:border-box;margin-bottom:20rpx;padding-left:.5rem;padding-top:1.5rem;padding-bottom:4rem;">
+    <view bindtap="toRules" style="position:absolute;right:0;top:.5rem;width:6rem;">
+        <view style="float:right;color:#fff;border:1px solid #fff;width:4rem;display:flex;justify-content: center;align-items: Center;height:1.6rem;border-top-left-radius:1rem;border-bottom-left-radius:1rem;">获得规则</view>
+    </view>
+    <view style="display:flex;height:100%;width:100%;box-sizing:border-box;position:relative;display:flex;justify-content: center;align-items: Center;">
+        <view>
+            <view style="text-align:center;margin-bottom:.5rem;">我的金币</view>
+            <view style="display:flex;justify-content: center;align-items: Center;font-size:3rem;">
+                {{coin}}
+            </view>
+        </view>
+    </view>
+</view>
+    <view style="z-index:1;position:relative;width:100%;box-sizing:border-box;padding:0 .5rem;margin-top:-3rem;padding-bottom:3rem;">
+        <view style="width:100%;box-sizing:border-box;padding:0 .8rem;background-color:#fff;margin-top:.5rem;border-radius:.3rem;">
+           <block wx:if="{{!data_list||data_list.length==0}}">
+               
+                <view style="display:flex;padding:.8rem 0;text-align:center;color:#aaa;">
+               暂无数据
+               </view>
+            </block>
+            <block wx:if="{{data_list&&data_list.length>0}}"  wx:for="{{data_list}}" wx:key="{{index}}">
+                <view style="display:flex;padding:.8rem 0;">
+                    <view style="flex:1;">
+                        <view style="height:2rem;font-size:.8rem;float:left;display:flex;justify-content: center;align-items: Center;">
+                            <view>
+                                <view>{{item.way}}</view> 
+                                <view style="color:#A3A3A3;">{{filter.formatDate(item.createTime)}}</view> 
+                            </view>
+                        </view> 
+                    </view>
+                    <view style="flex:1;overflow:hidden;">
+                        <view style="color:#FF4E66;float:right;width:3rem;height:2rem;display:flex;justify-content: center;align-items: Center;">{{item.type==1?'+':'-'}}{{item.goldCoin?item.goldCoin:0}}金币</view> 
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
