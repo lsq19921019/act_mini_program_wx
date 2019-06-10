@@ -74,12 +74,6 @@ Page({
               todaySucc:res.data.msg.todaySucc,
               todayFail:res.data.msg.todayFail
             });
-            wx.showToast({
-              title: res.data.msg,
-              icon: 'none',
-              mask: 'true',
-              duration: 1500,
-            });
           }else{
             wx.showToast({
               title: res.data.msg,

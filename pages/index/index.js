@@ -205,20 +205,22 @@ Page({
       token: wx.getStorageSync('token'),
     }
     console.log(app.globalData.APPID);
-    util.request(myUrl.mainUrl + 'minipro/articles/'+app.globalData.APPID, pams, 'GET', 0, function (res) {
+    util.request(myUrl.mainUrl + 'minipro/articles/'+app.globalData.APPID, pams, 'GET', 1, function (res) {
       console.log(res.data);
       if (res.data.code == 1000) {
         that.setData({
           data_list:res.data.msg
         });
         if(share_tag){
-          wx.showToast({
-              title: that.data.data_list[0].url,
-              icon: 'none',
-              mask: 'true',
-              duration: 1500,
-            });
+          // wx.showToast({
+          //     title: that.data.data_list[0].url,
+          //     icon: 'none',
+          //     mask: 'true',
+          //     duration: 1500,
+          //   });
           wx.setStorageSync('to_url', that.data.data_list[0].url);
+          
+          wx.setStorageSync('to_title', that.data.data_list[0].title);
           
           wx.navigateTo({
             url: "/pages/index/detail/detail",
