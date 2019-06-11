@@ -15,18 +15,18 @@
 </view>
 <view style="position:relative;overflow:hidden;">
     <view class="bannerAD" askInfoin>
-            <swiper autoplay="true" interval="4000" circular="true" class="swiper" indicator-color="rgba(255,255,255,0.8)" indicator-active-color="red" indicator-dots="true">
-                <block wx:for="{{themlist}}" wx:key="{{index}}">
-                    <swiper-item>
-                        <!-- <navigator class="u-row" url="{{item.url}}"> -->
-                        <view bindtap="toPageBanner" data-type="{{index}}">
-                            <image src="{{item.imageUrl}}" mode="widthFix" />
-                        </view>
-                        <!-- </navigator> -->
-                    </swiper-item>
-                </block>
-            </swiper>
-        </view>
+        <swiper autoplay="true" interval="4000" circular="true" class="swiper" indicator-color="rgba(255,255,255,0.8)" indicator-active-color="red" indicator-dots="true">
+            <block wx:for="{{themlist}}" wx:key="{{index}}">
+                <swiper-item>
+                    <!-- <navigator class="u-row" url="{{item.url}}"> -->
+                    <view bindtap="toPageBanner" data-type="{{index}}">
+                        <image src="{{item.imageUrl}}" mode="widthFix" />
+                    </view>
+                    <!-- </navigator> -->
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
     <view bindtap="toRules" style="font-size:.7rem;position:absolute;right:0;top:1rem;background-color:#555;color:#fff;width:4rem;padding:.5rem 0;text-align:center;border-top-left-radius:1rem;border-bottom-left-radius:1rem;">
         规则说明
     </view>

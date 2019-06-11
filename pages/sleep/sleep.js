@@ -52,7 +52,7 @@ Page({
   getIndexData:function(){
     // https://pddmini.hzduomi.net/
         let that = this;
-        util.request(myUrl.mainUrl + 'minipro/clock/indexInfo/'+app.globalData.APPID, {test:1}, 'GET', 0, function (res) {
+        util.request(myUrl.mainUrl + 'minipro/clock/indexInfo/'+app.globalData.APPID, {}, 'GET', 0, function (res) {
           console.log(res.data);
           if(res.data.code==1000){
             let num = res.data.msg.users.length;

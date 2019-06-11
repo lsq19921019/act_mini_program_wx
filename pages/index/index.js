@@ -175,10 +175,11 @@ Page({
     });
     // return;
     console.log(e.currentTarget.dataset.url);
-    let url_ = e.currentTarget.dataset.url.replace('http:','https:');
+    // let url_ = e.currentTarget.dataset.url.replace('http:','https:')+'#wechat_redirect';
+    let url_ = e.currentTarget.dataset.url;
     let url_title_ = e.currentTarget.dataset.title;
     console.log(url_);
-    wx.setStorageSync('to_url', url_);
+    wx.setStorageSync('to_url', url_.replace('#rd','#wechat_redirect'));
     wx.setStorageSync('to_title', url_title_);
     
     wx.navigateTo({
@@ -218,8 +219,8 @@ Page({
           //     mask: 'true',
           //     duration: 1500,
           //   });
+          // wx.setStorageSync('to_url', that.data.data_list[0].url.replace('http:','https:')+'#wechat_redirect');
           wx.setStorageSync('to_url', that.data.data_list[0].url);
-          
           wx.setStorageSync('to_title', that.data.data_list[0].title);
           
           wx.navigateTo({

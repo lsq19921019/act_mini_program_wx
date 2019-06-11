@@ -3,9 +3,9 @@
 <!-- <view class='bg' style="height:{{winHeight-428}}rpx"> -->
 <view class='logo_wrap'>
   <view class='logo'>
-    <image src='https://duoyidian.hzinterconn.cn/icon_auth_login.png'></image>
+    <image src='{{logo}}'></image>
   </view>
-  <text>hi~欢迎来到辣妈知识致富</text>
+  <text>{{title}}</text>
 </view>
 <!-- </view> -->
 
