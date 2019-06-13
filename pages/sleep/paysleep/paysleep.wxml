@@ -42,15 +42,15 @@
         </view>
     </view>
     <view style="text-align:center;padding:.5rem 0;background-color:#F6F5F5;">
-        选择支付方式
+        <!-- 选择支付方式 -->
     </view>
     <view style="background-color:#fff;padding:.8rem 0;">
         <view data-pay="{{sel_pay}}" bindtap="selPay" style="display:flex;justify-content: center;align-items: Center;margin-bottom:1.8rem;">
             <view style="margin-right:.5rem;border-radius:.2rem;background-color:red;color:#fff;height:1rem;width:1rem;display:flex;justify-content: center;align-items: Center;">余</view> 
             <view>我的金币余额  （{{remain?remain:'0'}}）</view>
-            <view class="{{sel_pay==1?'active_sel':''}}" style="margin-left:.5rem;background-color:#ccc;height:1rem;width:1rem;display:flex;justify-content: center;align-items: Center;border-radius:100%;">
+            <!-- <view class="{{sel_pay==1?'active_sel':''}}" style="margin-left:.5rem;background-color:#ccc;height:1rem;width:1rem;display:flex;justify-content: center;align-items: Center;border-radius:100%;">
                 <view style="border-top:2px solid #fff;border-right:2px solid #fff;height:.4rem;width:.6rem;transform:rotate(135deg);margin-bottom:.2rem;"></view>
-            </view>
+            </view> -->
         </view>
         <view bindtap="paySleep" style="color:#fff;background-color:red;text-align:center;width:60%;margin:0 auto;padding:.5rem 0;border-radius:.2rem;">支付</view>
     </view>

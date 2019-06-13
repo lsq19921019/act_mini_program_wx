@@ -15,15 +15,17 @@ Page({
     selCoin:1
   },
   paySleep:function(){ 
-    if(this.data.sel_pay==0){
-      wx.showToast({
-        title: "请选择支付方式",
-        icon: 'none',
-        mask: 'true',
-        duration: 1500,
-      });
-      return;
-    }
+    // if(this.data.sel_pay==0){
+    //   wx.showToast({
+    //     title: "请选择支付方式",
+    //     icon: 'none',
+    //     mask: 'true',
+    //     duration: 1500,
+    //   });
+    //   return;
+    // }
+    // console.log('已支付');
+    // return;
     let that = this;
     var pams_ = {
       token: wx.getStorageSync('token'),
