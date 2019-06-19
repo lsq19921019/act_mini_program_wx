@@ -36,7 +36,7 @@
                         </view> 
                     </view>
                     <view style="flex:1;overflow:hidden;">
-                        <view style="color:#FF4E66;float:right;width:3rem;height:2rem;display:flex;justify-content: center;align-items: Center;">{{item.type==1?'+':'-'}}{{item.goldCoin?item.goldCoin:0}}金币</view> 
+                        <view style="color:#FF4E66;float:right;width:6rem;height:2rem;display:flex;justify-content: center;align-items: Center;">{{item.type==1?'+':'-'}}{{item.goldCoin?item.goldCoin:0}}金币</view> 
                     </view>
                 </view>
             </block>

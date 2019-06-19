@@ -1,0 +1,14 @@
+<!--common/lodmore/lodmore.wxml-->
+
+<template name="loging_more">
+  <view class='loding-ico'  wx:if="{{!nomore}}">
+    <block wx:if="{{showloding}}">
+      <view style="width:100%;display:flex;justify-content: center;align-items: Center;">
+        <image style="width:2rem;height:2rem;" src="../../../../../img/loading1.gif"></image>
+      </view>
+    </block>
+  </view>
+
+  <view class='nomore' style="width:100%;text-align:center;" wx:if="{{nomore}}">- -没有更多- -</view>
+
+</template>

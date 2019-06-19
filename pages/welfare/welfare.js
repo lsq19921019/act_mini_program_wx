@@ -21,6 +21,11 @@ Page({
       name:'6666',
       imageUrl:'https://duoyidian.hzinterconn.cn/reading_home_banner_1.png',
       url:'/pages/sleep/sleep'
+    },{
+      themeId:'6666',
+      name:'6666',
+      imageUrl:'https://duoyidian.hzinterconn.cn/reading_freeorder_banner_welfare.png',
+      url:'/pages/freeOrder/freeOrder'
     }],
   },
   toPageBanner: function(e){
@@ -28,9 +33,13 @@ Page({
       wx.switchTab({
         url: "/pages/welfare/welfare",
       });
-    }else{
+    }else if(e.currentTarget.dataset.type==0){
       wx.switchTab({
         url: "/pages/sleep/sleep",
+      });
+    }else{
+      wx.navigateTo({
+        url: "/pages/freeOrder/freeOrder",
       });
     }
   },
@@ -45,7 +54,6 @@ Page({
     return y+'-'+M+'-'+d+' '+hours+':'+min+':'+sec;
   },
   toRules:function(){
-    
     wx.navigateTo({
       url: "/pages/welfare/rules/rules",
     })

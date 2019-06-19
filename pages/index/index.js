@@ -6,7 +6,7 @@ Page({
   data: {
     _type: 0,//初始页面 A级  B级
     page_num: 0,
-    data_list:'',
+    data_list:[],
     page_size: 0,
     switch_type:1,
     sendMsg:'',
@@ -20,19 +20,30 @@ Page({
       name:'6666',
       imageUrl:'https://duoyidian.hzinterconn.cn/reading_home_banner_1.png',
       url:'/pages/sleep/sleep'
+    },{
+      themeId:'6666',
+      name:'6666',
+      imageUrl:'https://duoyidian.hzinterconn.cn/reading_freeorder_banner_index.png',
+      url:'/pages/index/course/course'
     }],
     current_arti_id:'',
     showWinLayer:false,
-    contact:false
+    contact:false,
+    temp_page:1,
+    stop:false
   },
   toPageBanner: function(e){
     if(e.currentTarget.dataset.type==0){
       wx.switchTab({
         url: "/pages/welfare/welfare",
       });
-    }else{
+    }else if(e.currentTarget.dataset.type==0){
       wx.switchTab({
         url: "/pages/sleep/sleep",
+      });
+    }else{
+      wx.navigateTo({
+        url: "/pages/freeOrder/freeOrder",
       });
     }
   },
@@ -52,6 +63,11 @@ Page({
   closeWin: function(){
     this.setData({
       showWinLayer:false
+    });
+  },
+  toCourse: function(){
+    wx.navigateTo({
+      url: "/pages/freeOrder/freeOrder",
     });
   },
   showWin: function(e){
@@ -198,20 +214,50 @@ Page({
     let sec = date.getSeconds();
     return y+'-'+M+'-'+d+' '+hours+':'+min+':'+sec;
   },
-  getList: function(type_,name,share_tag){
+  getList: function(type_,name,share_tag,page_){
     var that = this;
+    // that.setData({
+    //   temp_page:that.data.temp_page+1
+    // });
     var pams = {
       type:type_,
       name:name?name:'',
       token: wx.getStorageSync('token'),
+      page:that.data.temp_page
     }
     console.log(app.globalData.APPID);
     util.request(myUrl.mainUrl + 'minipro/articles/'+app.globalData.APPID, pams, 'GET', 1, function (res) {
       console.log(res.data);
       if (res.data.code == 1000) {
-        that.setData({
-          data_list:res.data.msg
-        });
+        if(res.data.msg.length<20||res.data.msg.length===0){
+          // if(that.data.temp_page>1){
+            
+          //   that.setData({
+          //     data_list:that.data.data_list.concat(res.data.msg)          
+          //   });
+          // }
+          that.setData({
+            stop:true          
+          });
+          that.setData({
+            nomore: true,
+            showloding: false,  
+          })
+        }else{
+          that.setData({
+            stop:false          
+          });
+          // that.setData({
+          //   data_list:res.data.msg
+          // });
+          that.setData({
+            nomore: false,
+            showloding: true,
+          })
+        }
+          that.setData({
+            data_list:that.data.data_list.concat(res.data.msg)          
+          });
         if(share_tag){
           // wx.showToast({
           //     title: that.data.data_list[0].url,
@@ -255,7 +301,28 @@ Page({
       wx.stopPullDownRefresh();
     },500);
   },
-  
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function() {
+    var that = this;
+    console.log(that.data.stop);
+    if (that.data.stop == true) {
+      return;
+    } else {
+      that.setData({
+        temp_page: that.data.temp_page + 1
+      })
+      that.getList(this.data.switch_type,this.data.sendMsg,null,null);
+      // if (that.data._active == 0) {
+      //   that.goodslist(that.data.page, 0);
+      //   // that.getIndexInfo(that.data.page, 0)
+      // } else {
+      //   that.getData(that.data.page, that.data._num, that.data.catid, 0);
+      // }
+    }
+
+  },
   onLoad: function (options) {
     wx.showShareMenu({
       withShareTicket: true
@@ -316,14 +383,22 @@ Page({
   },
   tabSwitch:function(){
     let that = this;
+    that.setData({
+      nomore: false,
+      showloding: true,
+    })
     if(that.data.switch_type==1){
       that.setData({
-        switch_type:2
+        switch_type:2,
+        data_list:[],
+        temp_page:1
       });
       that.getList(2);
     }else{
       that.setData({
-        switch_type:1
+        switch_type:1,
+        data_list:[],
+        temp_page:1
       });
       that.getList(1);
     }
