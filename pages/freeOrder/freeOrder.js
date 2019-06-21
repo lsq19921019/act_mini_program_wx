@@ -320,12 +320,12 @@ Page({
     //   duration: 3000,
     // });
     console.log(wx);
-    if(app.globalData.role===""||app.globalData.role==0){
-      // console.log(app.globalData.role);0:粉丝;1:合伙人;
-      that.setData({
-        showInfo: true
-      });
-    }
+    // if(app.globalData.role===""||app.globalData.role==0){
+    //   // console.log(app.globalData.role);0:粉丝;1:合伙人;
+    //   that.setData({
+    //     showInfo: true
+    //   });
+    // }
     // that.setData({
     //   showInfo: true
     // });
@@ -458,7 +458,7 @@ Page({
     console.log(e.currentTarget.dataset.item);
     if(e.currentTarget.dataset.fid){
 
-      let pams = {token:app.globalData.token, goodsFreeId:e.currentTarget.dataset.fid}
+      let pams = {token:app.globalData.token, goodsFreeId:e.currentTarget.dataset.fid, appid:app.globalData.APPID}
       util.request(myUrl.mainUrl + 'pdd/free/check?', pams, 'GET', 1, function(resp) {
         console.log(resp);
         if(resp.data.result==='OK'){

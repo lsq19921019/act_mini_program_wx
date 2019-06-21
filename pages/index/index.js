@@ -37,7 +37,7 @@ Page({
       wx.switchTab({
         url: "/pages/welfare/welfare",
       });
-    }else if(e.currentTarget.dataset.type==0){
+    }else if(e.currentTarget.dataset.type==1){
       wx.switchTab({
         url: "/pages/sleep/sleep",
       });
@@ -423,7 +423,7 @@ Page({
       path = "pages/index/index?name="+e.target.dataset.title+"&type="+that.data.switch_type;
     }else{
       title = '重新定义阅读，赚金币好礼免费拿';
-      imgUrl =  'https://duoyidian.hzinterconn.cn/reading_mini_share_1.png';
+      imgUrl =  'http://eco.hzinterconn.cn/reading_share_banner.png';
       path = 'pages/index/index';
     }
     // wx.setStorageSync("name",);

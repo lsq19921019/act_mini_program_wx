@@ -33,7 +33,7 @@ Page({
       wx.switchTab({
         url: "/pages/welfare/welfare",
       });
-    }else if(e.currentTarget.dataset.type==0){
+    }else if(e.currentTarget.dataset.type==1){
       wx.switchTab({
         url: "/pages/sleep/sleep",
       });

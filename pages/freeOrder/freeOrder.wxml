@@ -30,7 +30,7 @@
               <image src="http://duoyidian.hzinterconn.cn/icon_freeorder_3.png" style="width:100rpx;height:100rpx;border-radius:50%;"></image>
             </view>
             <view style="margin-top:10rpx;">我的订单</view> 
-            </view>
+          </view>
           <view style="flex:1" bindtap="toDeposit">
             <view >
               <image src="http://duoyidian.hzinterconn.cn/icon_freeorder_4.png" style="width:100rpx;height:100rpx;border-radius:50%;"></image>
